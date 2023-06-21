@@ -1,5 +1,7 @@
 package laboratorio;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class metodosLaboratorio10 {
@@ -23,7 +25,7 @@ public class metodosLaboratorio10 {
             sumaDiagonal2+=array[i][counter];
             counter++;
         }
-        return Math.abs(sumaDiagonal1-sumaDiagonal2);
+        return Math.abs(sumaDiagonal1-sumaDiagonal2); //valor absoluto
     }
 
     public static void plusMinus(List<Integer> arr) {
@@ -46,9 +48,9 @@ public class metodosLaboratorio10 {
 
             }
         }
-        System.out.println( (double)count/n);
-        System.out.println( (double)count2/n);
-        System.out.println( (double)count3/n);
+        System.out.println( String.format ("%.6f", (double)count/n));
+        System.out.println( String.format ("%.6f", (double)count2/n));
+        System.out.println( String.format ("%.6f", (double)count3/n));
     }
 
     public static int birthdayCakeCandles(List<Integer> candles) {
@@ -71,6 +73,29 @@ public class metodosLaboratorio10 {
             }
         }
         return count;
+    }
+
+    public static List<Integer> cutTheSticks(List<Integer> arr) {
+        // Write your code here
+
+        List <Integer> resultadoFinal = new ArrayList<>();
+        while(!arr.isEmpty()){
+            resultadoFinal.add(arr.size());
+
+            int stickMin = Collections.min(arr);
+
+            List <Integer> sticks = new ArrayList<>();
+            for(int stick :arr){
+                int corte = stick - stickMin;
+                if(corte>0){
+                    sticks.add(corte);
+                }
+            }
+            arr = sticks;
+
+        }
+
+        return resultadoFinal;
     }
 
 }
