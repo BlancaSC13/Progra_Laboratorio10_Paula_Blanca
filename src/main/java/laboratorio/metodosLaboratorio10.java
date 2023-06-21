@@ -51,4 +51,26 @@ public class metodosLaboratorio10 {
         System.out.println( (double)count3/n);
     }
 
+    public static int birthdayCakeCandles(List<Integer> candles) {
+        // Write your code here
+        int count =0;
+        int mayor= 0;
+        int n = candles.size();
+
+        for(int i =0; i < n ; i++){
+            int j = candles.get(i);
+            if(j>=mayor){
+                mayor = j;
+            }
+        }
+
+        for(int i =0; i < n ; i++){
+            int j = candles.get(i);
+            if(j == mayor){
+                count ++;
+            }
+        }
+        return count;
+    }
+
 }
