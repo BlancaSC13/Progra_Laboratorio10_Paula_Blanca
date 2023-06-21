@@ -25,4 +25,30 @@ public class metodosLaboratorio10 {
         }
         return Math.abs(sumaDiagonal1-sumaDiagonal2);
     }
+
+    public static void plusMinus(List<Integer> arr) {
+        // Write your code here
+        int count =0;
+        int count2 =0;
+        int count3 =0;
+        int n = arr.size();
+
+        //porcentaje
+        for(int i = 0; i<arr.size(); i++){
+
+            if(arr.get(i)>0){
+                count++;
+            }else if(arr.get(i)<0){
+                count2++;
+
+            }else{
+                count3++;
+
+            }
+        }
+        System.out.println( (double)count/n);
+        System.out.println( (double)count2/n);
+        System.out.println( (double)count3/n);
+    }
+
 }
